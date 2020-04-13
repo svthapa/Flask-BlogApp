@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block title%}Find{%endblock%}
+
+{%block content%}
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="head">Find Blog Posts of Other People Here</h1>
+    <p class="dashboard">You can search for blog posts of people you know here. All you need is their username</p>
+  </div>
+</div>
+<div class="container">
+  <div class="active-cyan-3 active-cyan-4 mb-4">
+    <form action="{{url_for('blog.find')}}" autocomplete="off">
+      <input class="form-control" type="text" placeholder="Search For Username" aria-label="Search" name="search"><br>
+      <div class="text-center">
+        <input type="submit" value="Search" class="btn btn-warning btn-lg">
+      </div>
+    </form>
+</div>
+</div>
+<hr>
+{%if data%}
+<div class="container">
+  {%for blog in data%}
+  <div class="card">
+  <div class="card-header">
+    {{blog.title}}
+  </div>
+  <div class="card-body">
+    <h6 class="card-subtitle text-muted">{{blog.pub_date}}</h6>
+    <p class="card-text">{{blog.body | safe}}</p>
+  </div>
+</div>
+{%endfor%}
+</div>
+{%endif%}
+{%endblock%}

@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block title%}Home{%endblock%}
+{%block content%}
+
+<div class="container home">
+  <div class="jumbotron">
+    <h1 class="head">Welcome To <strong id="logo">Blog Your Thoughts.</strong></h1>
+    <p class="dashboard">This Blog App is for you to blog your thoughts and save it so you never forget them.</p>
+    {%if session.logged_in == NULL %}
+      <div class="container text-center">
+        <a href="/register" class="btn btn-primary btn-md ">Register</a>
+        <a href="/login" class="btn btn-success btn-md ">Login</a>
+      </div>
+    {%endif%}
+  </div>
+</div>
+
+{%endblock%}

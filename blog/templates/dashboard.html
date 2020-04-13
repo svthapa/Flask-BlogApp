@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{%block title%}Dashboard{%endblock%}
+
+{%block content%}
+<div class="container top">
+  <div class="jumbotron">
+    <h1 class="head">Welcome {{session.username}}</h1>
+    <p class="dashboard">You can add new blog posts here and view your old posts.</p>
+    <a href="/addPost" class="btn btn-primary btn-lg homeBtn">Add Post</a>
+  </div>
+</div>
+
+<hr>
+<br>
+<div class="container">
+  <table class="table table-striped">
+    <tr>
+      <!-- <th>ID</th> -->
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {%for post in data %}
+      <tr>
+        <!-- <td>{{post.id}}</td> -->
+        <td>{{post.title}}</td>
+        <td>{{post.author}}</td>
+        <td>{{post.pub_date}}</td>
+        <td><a href="edit_post/{{post.id}}" class="btn btn-info float-right">Edit</a></td>
+        <td><a href="del_post/{{post.id}}" class="btn btn-danger">Delete</a></td>
+      </tr>
+    {%endfor%}
+  </table>
+  {%if msg%}
+    <h3>{{msg}}</h3>
+  {%endif%}
+</div>
+
+{%endblock%}

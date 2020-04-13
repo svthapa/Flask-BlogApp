@@ -1,0 +1,15 @@
+.alert{
+  width: 450px;
+  height: 50px;
+  position: relative;
+  left: 30%;
+}
+#close{
+  position: relative;
+  bottom: 60px;
+}
+#message{
+font-size: 12pt;
+text-align: center;
+position: relative;
+}

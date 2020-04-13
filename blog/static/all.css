@@ -1,0 +1,47 @@
+h1.head{
+  text-align: center;
+}
+.login{
+  position: relative;
+  left: 30%;
+  top: 100px;
+}
+form #uname{
+  width: 300px;
+}
+form #pass{
+  width: 300px;
+}
+p.dashboard{
+  text-align: center;
+}
+
+.home{
+  position: relative;
+  top: 150px;;
+}
+
+strong#logo{
+  color: orange;
+}
+.text{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+
+            /* The number of lines to be displayed */
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+
+.viewImg{
+  width: 500px;
+}
+.date{
+  position: relative;
+  top: 50px;
+}
+/* .search{
+  position: relative;
+  left: 40%;
+} */
