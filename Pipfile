@@ -10,7 +10,7 @@ flask = "*"
 flask-mysql = "*"
 flask-wtf = "*"
 passlib = "*"
-flask-scss = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
