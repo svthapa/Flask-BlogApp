@@ -6,7 +6,9 @@
   <div class="jumbotron">
     <h1 class="head">Your Blog Posts</h1>
     <p class="dashboard">View your blog posts here.</p>
-    <a href="/addPost" class="btn btn-primary btn-lg homeBtn">Add Post</a>
+    <div class="text-center">
+      <a href="/addPost" class="btn btn-info btn-lg">Add Post</a>
+    </div>
   </div>
 </div>
 
@@ -16,7 +18,7 @@
       {%for blog in data1%}
       <div class="col-lg-4 mb-4">
         <div class="card">
-          <img src="{{url_for('static', filename=blog.blog_img)}}" alt="card image" class="card-img-top">
+          <img src="{{blog.filename}}" alt="card image" class="card-img-top">
           <div class="card-body">
             <h2 class="card-title">{{blog.title}}</h2>
             <h6 class="card-subtutle text-muted">{{blog.pub_date}}</h6>

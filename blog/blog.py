@@ -9,7 +9,7 @@ from functools import wraps
 from werkzeug.utils import secure_filename
 import os
 
-upload_folder='/Users/samrajyathapa/Environments/blogApp/blog/static/'
+upload_folder = 'uploads/'
 bp = Blueprint('blog', __name__)
 
 mysql=MySQL(cursorclass=DictCursor)
@@ -167,6 +167,7 @@ def addPost():
         file = form.blog_img.data
         filename = secure_filename(file.filename)
         file.save(os.path.join(upload_folder, filename))
+        filename = os.path.join(upload_folder, filename)
         cur = mysql.get_db().cursor()
 
         cur.execute("INSERT INTO blogpost(title, author, body, blog_img) VALUES(%s, %s, %s, %s)", (title, session['username'], body, filename))
